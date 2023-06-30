@@ -1,0 +1,15 @@
+You have a loan on which interest rate is subject to change and when it changes,
+Loan notifies to newspaper or internet media to display a new interest rate.
+
+//Advantage of Observer pattern
+Loose coupling between objects called observer and observable.
+The Subject only knows the list of observers. It don't care about how they are implemented.
+All the Observers are notified by subject in a single event call as broadcast communication.
+
+//Disadvantage 
+sometimes if any problem came, debugging become little bit challenging, cuz flow of control is
+implicitly between observers and observable we can predict that now, observer is going to fire
+and if there is a chain of observers then, debugging become more complex.
+
+Another issue is memory management cuz, subject will hold all the reference of all the observers
+if we not unregister the object then, it can create memory issue.
