@@ -1,6 +1,6 @@
 package com.vivek.SingletonDesignPattern;
 
-public class SingletonDesign {
+public class SingletonDesign1 {
     public static void main(String[] args) {
         A obj1 = A.getInstance();
         A obj2 = A.getInstance();
