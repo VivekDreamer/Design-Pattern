@@ -1,5 +1,7 @@
 package com.vivek.SingletonDesignPattern;
 
+import java.io.Serializable;
+
 public class SingletonDesign2 {
     public static void main(String[] args) {
         LazySingleton obj1 = LazySingleton.getInstance();
@@ -17,7 +19,7 @@ public class SingletonDesign2 {
 //and thread2 is working with obj2 
 //Both threads might get entered in getInstance() method at the same time and it will create two different instances.
 // When to use?  Non thread safe and creating common resource like db connection.
-class LazySingleton{
+class LazySingleton implements Serializable{
     static LazySingleton obj;
     private LazySingleton(){};
     public static LazySingleton getInstance(){
