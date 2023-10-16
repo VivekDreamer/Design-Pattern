@@ -51,13 +51,5 @@ public class Main {
         youtubeVideo.play("abc.mp4");
         Video netflixVideo = new NetflixVideo(new UHD4KProcessor());
         netflixVideo.play("xyz.mp4");
-        LocalDateTime from = LocalDateTime.now().minusDays(31);
-        LocalDateTime to = LocalDateTime.now().minusDays(30);
-        Date date = new Date();
-        System.out.println(date);
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.DAY_OF_MONTH, -30); // Subtract 30 days
-        Date date30DaysAgo = calendar.getTime();
-        System.out.println("Date 30 Days Ago: " + date30DaysAgo);
     }
 }
