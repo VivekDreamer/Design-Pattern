@@ -26,5 +26,10 @@ public class CollegeStudent implements Student{
     public String getEmail() {
         return email;
     }
+
+    @Override
+    public String toString() {
+        return "CollegeStudent [name=" + name + ", surname=" + surname + ", email=" + email + "]";
+    }
     
 }
