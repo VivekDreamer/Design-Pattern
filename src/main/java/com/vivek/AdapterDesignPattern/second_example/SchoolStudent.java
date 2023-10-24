@@ -23,4 +23,10 @@ public class SchoolStudent {
     public String getEmailAddress() {
         return emailAddress;
     }
+
+    @Override
+    public String toString() {
+        return "SchoolStudent [firstName=" + firstName + ", lastName=" + lastName + ", emailAddress=" + emailAddress
+                + "]";
+    }
 }
