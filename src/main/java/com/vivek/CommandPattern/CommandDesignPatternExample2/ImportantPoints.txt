@@ -1,0 +1,42 @@
+   We will look at a real life scenario where we can implement Command pattern. 
+   Let’s say we want to provide a File System utility with methods to open, write and close file.
+   This file system utility should support multiple operating systems such as Windows and Unix. 
+   To implement our File System utility, first of all we need to create the receiver classes that will actually do all the work.
+   Since we code in terms of interface in java, we can have FileSystemReceiver interface 
+   and it’s implementation classes for different operating system flavors such as Windows, Unix, Solaris etc.
+  
+   FileSystemReceiver interface defines the contract for the implementation classes. For simplicity, 
+   I am creating two flavors of receiver classes to work with Unix and Windows systems.
+  
+   We can use interface or abstract class to create our base Command, 
+   it’s a design decision and depends on your requirement. We are going with interface because 
+   we don’t have any default implementations.
+  
+   Now we need to create implementations for all the different types of action performed by the receiver. 
+   Since we have three actions we will create three Command implementations. 
+   Each Command implementation will forward the request to the appropriate method of receiver.
+  
+   Invoker is a simple class that encapsulates the Command and passes the request to the command object to process it.
+  
+   Our file system utility implementation is ready and we can move to write a simple command pattern client program.
+   But before that I will provide a utility method to create the appropriate FileSystemReceiver object.
+   Since we can use System class to get the operating system information, we will use this or else we can use Factory pattern
+ 
+   to return appropriate type based on the input.
+  
+  
+   Notice that client is responsible to create the appropriate type of command object. 
+   For example if you want to write a file you are not supposed to create CloseFileCommand object.
+   Client program is also responsible to attach receiver to the command and then command to the invoker class.
+   Output of the above command pattern example program is:
+  
+  
+  
+   Command is the core of command design pattern that defines the contract for implementation.
+   Receiver implementation is separate from command implementation.
+   Command implementation classes chose the method to invoke on receiver object, for every method in receiver there will be a command implementation. It works as a bridge between receiver and action methods.
+   Invoker class just forward the request from client to the command object.
+   Client is responsible to instantiate appropriate command and receiver implementation and then associate them together.
+   Client is also responsible for instantiating invoker object and associating command object with it and execute the action method.
+   Command design pattern is easily extendible, we can add new action methods in receivers and create new Command implementations without changing the client code.
+   The drawback with Command design pattern is that the code gets huge and confusing with high number of action methods and because of so many associations.
